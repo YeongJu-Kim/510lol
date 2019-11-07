@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.care.mybatis.myMapper"><!--  첫 라인 참조! -->
+	<select id="findmember03" resultType="dto" parameterType="String">
+		select * from lolmember where nick = #{nick}
+	</select>
+	
+	<select id="findnonemember03" resultType="sdto" parameterType="String">
+		select * from nonmember where nick = #{nick}
+	</select>
+	
+	<insert id="nonmember03" parameterType="sdto">
+		insert into nonmember values(#{nick},#{rank},#{tier},#{score},#{total},#{winrate},#{most1},#{most2},#{most3},#{most4},#{most5},#{profileIconId})
+	</insert>
+</mapper>
